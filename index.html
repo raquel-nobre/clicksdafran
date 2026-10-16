@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clicks da Fran | Fotografia de newborn, gestante, família e aniversário infantil em São Paulo</title>
+<meta name="description" content="Retratar os sentimentos: fotografia de newborn, gestante, família e aniversário infantil em São Paulo. Veja o portfólio e peça seu orçamento pelo WhatsApp.">
+<link rel="canonical" href="https://clicksdafran.com.br/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Photographer","name":"Clicks da Fran","url":"https://clicksdafran.com.br/","areaServed":"São Paulo","address":{"@type":"PostalAddress","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"}}
+</script>
+<style>
+:root{
+  --papel:#FAF8F7; --tinta:#1E2523; --verde:#2B2F2E; --rosa:#E9E6E2; --musgo:#6F7F78; --linha:#DDD3CF;
+  --serif:"Instrument Serif",Georgia,serif; --sans:"Hanken Grotesk",system-ui,sans-serif;
+  --pad:clamp(1.25rem,5vw,4rem);
+}
+@media (prefers-color-scheme:dark){
+  :root{--papel:#171C1B;--tinta:#F1ECEA;--verde:#D9D6D1;--rosa:#262A29;--musgo:#98A8A1;--linha:#323A38}
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--papel);color:var(--tinta);line-height:1.6;font-size:1.0625rem}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--verde);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+
+header{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.25rem var(--pad)}
+.marca{font-family:var(--serif);font-size:1.5rem;text-decoration:none}
+nav{display:flex;gap:1.5rem;font-size:.95rem}
+nav a{text-decoration:none}
+nav a:hover{text-decoration:underline}
+@media (max-width:640px){nav a:not(.zap-nav){display:none}}
+
+.btn{display:inline-block;background:var(--verde);color:var(--papel);padding:.8rem 1.5rem;border-radius:999px;text-decoration:none;font-weight:600;border:0;cursor:pointer;font:inherit;font-weight:600}
+.btn:hover{opacity:.9}
+.btn.vazado{background:transparent;color:var(--tinta);border:1.5px solid var(--tinta)}
+
+section{padding:clamp(3rem,8vw,6rem) var(--pad)}
+h1,h2{font-family:var(--serif);font-weight:400;line-height:1.05}
+h1{font-size:clamp(2.75rem,8vw,6.5rem);max-width:14ch}
+h2{font-size:clamp(2rem,4.5vw,3.25rem);margin-bottom:1.5rem}
+
+/* Hero: título grande à esquerda, mosaico de fotos à direita */
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(1.5rem,4vw,4rem);align-items:end;padding-top:1rem}
+.hero p{max-width:42ch;margin:1.5rem 0 2rem;color:var(--musgo)}
+.hero .acoes{display:flex;gap:.75rem;flex-wrap:wrap}
+.mosaico{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.mosaico .foto:first-child{grid-row:span 2}
+@media (max-width:820px){.hero{grid-template-columns:1fr}}
+
+/* Fotos: troque cada .foto por uma <img>, veja o README no fim do arquivo */
+.foto{background:var(--rosa);border-radius:4px;overflow:hidden;position:relative}
+.foto img{width:100%;height:100%;object-fit:cover}
+.foto.v{aspect-ratio:3/4}.foto.h{aspect-ratio:4/3}.foto.q{aspect-ratio:1}
+.foto:not(:has(img))::after{content:attr(data-nome);position:absolute;inset:auto 0 0 0;padding:.75rem;font-size:.85rem;color:var(--musgo)}
+
+/* Galeria com filtro */
+.filtros{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
+.filtros button{font:inherit;font-size:.95rem;background:none;color:var(--tinta);border:1.5px solid var(--linha);border-radius:999px;padding:.4rem 1.1rem;cursor:pointer}
+.filtros button[aria-pressed="true"]{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
+.galeria{columns:3 240px;column-gap:.75rem}
+.galeria .foto{break-inside:avoid;margin-bottom:.75rem}
+.galeria .foto[hidden]{display:none}
+
+/* Sobre */
+.sobre{display:grid;grid-template-columns:minmax(0,380px) 1fr;gap:clamp(1.5rem,5vw,5rem);align-items:center;background:var(--rosa)}
+.sobre p{max-width:60ch;margin-bottom:1rem}
+@media (max-width:820px){.sobre{grid-template-columns:1fr}}
+
+/* Depoimentos */
+.depoimentos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2.5rem}
+blockquote{font-family:var(--serif);font-size:1.5rem;line-height:1.3}
+blockquote footer{font-family:var(--sans);font-size:.9rem;color:var(--musgo);margin-top:.75rem}
+
+/* Pacotes */
+.pacotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.pacote{border:1.5px solid var(--linha);border-radius:6px;padding:1.75rem}
+.pacote h3{font-family:var(--serif);font-weight:400;font-size:1.75rem}
+.pacote .preco{font-weight:600;margin:.25rem 0 1rem}
+.pacote ul{padding-left:1.1rem;color:var(--musgo)}
+
+/* Contato */
+.contato{text-align:left;border-top:1px solid var(--linha)}
+.contato p{max-width:50ch;margin-bottom:1.5rem}
+footer.rodape{padding:2rem var(--pad);font-size:.9rem;color:var(--musgo);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="marca" href="#topo">Clicks da Fran</a>
+  <nav aria-label="Principal">
+    <a href="#portfolio">Portfólio</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#pacotes">Pacotes</a>
+    <a class="zap-nav" href="#contato">Contato</a>
+  </nav>
+</header>
+
+<main id="topo">
+  <section class="hero">
+    <div>
+      <h1>Retratar os sentimentos.</h1>
+      <p>Fotografia de newborn, gestante, família e aniversário infantil em São Paulo, com direção leve para todo mundo se sentir à vontade.</p>
+      <div class="acoes">
+        <a class="btn" href="https://whats.link/clicksdafrann" target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
+        <a class="btn vazado" href="#portfolio">Ver portfólio</a>
+      </div>
+    </div>
+    <div class="mosaico">
+      <div class="foto v" data-nome="Foto de destaque 1"><!-- <img src="fotos/destaque-1.jpg" alt="Retrato em preto e branco de newborn" width="800" height="1066"> --></div>
+      <div class="foto q" data-nome="Foto de destaque 2"></div>
+      <div class="foto q" data-nome="Foto de destaque 3"></div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <h2>Portfólio</h2>
+    <div class="filtros" role="group" aria-label="Filtrar por tipo de ensaio">
+      <button aria-pressed="true" data-filtro="todos">Todos</button>
+      <button aria-pressed="false" data-filtro="newborn">Newborn</button>
+      <button aria-pressed="false" data-filtro="gestante">Gestante</button>
+      <button aria-pressed="false" data-filtro="familia">Família</button>
+      <button aria-pressed="false" data-filtro="aniversario">Aniversário infantil</button>
+    </div>
+    <div class="galeria">
+      <div class="foto v" data-tipo="gestante" data-nome="Gestante 1"></div>
+      <div class="foto h" data-tipo="familia" data-nome="Família 1"></div>
+      <div class="foto q" data-tipo="newborn" data-nome="Newborn 1"></div>
+      <div class="foto h" data-tipo="aniversario" data-nome="Aniversário 1"></div>
+      <div class="foto v" data-tipo="familia" data-nome="Família 2"></div>
+      <div class="foto q" data-tipo="gestante" data-nome="Gestante 2"></div>
+      <div class="foto v" data-tipo="newborn" data-nome="Newborn 2"></div>
+      <div class="foto h" data-tipo="gestante" data-nome="Gestante 3"></div>
+      <div class="foto v" data-tipo="aniversario" data-nome="Aniversário 2"></div>
+    </div>
+  </section>
+
+  <section class="sobre" id="sobre">
+    <div class="foto v" data-nome="Seu retrato"></div>
+    <div>
+      <h2>Oi, eu sou a Fran</h2>
+      <p>Escreva aqui, em 2 ou 3 parágrafos, como você começou na fotografia, por que gosta de retratar sentimentos e como é uma sessão com você.</p>
+      <p>Conte o que o cliente pode esperar: onde acontece, quanto tempo dura e em quanto tempo as fotos chegam.</p>
+      <a class="btn" href="#contato">Vamos conversar</a>
+    </div>
+  </section>
+
+  <section id="depoimentos">
+    <h2>Quem já fez</h2>
+    <div class="depoimentos">
+      <blockquote>“Depoimento da cliente aqui, curto e específico.”<footer>Nome, ensaio de gestante</footer></blockquote>
+      <blockquote>“Outro depoimento, de preferência de outro tipo de ensaio.”<footer>Nome, newborn</footer></blockquote>
+      <blockquote>“Um terceiro depoimento, falando do atendimento.”<footer>Nome, aniversário infantil</footer></blockquote>
+    </div>
+  </section>
+
+  <section id="pacotes">
+    <h2>Pacotes</h2>
+    <div class="pacotes">
+      <article class="pacote"><h3>Essencial</h3><p class="preco">R$ 000</p><ul><li>1 hora de ensaio</li><li>15 fotos editadas</li><li>Galeria online</li></ul></article>
+      <article class="pacote"><h3>Completo</h3><p class="preco">R$ 000</p><ul><li>2 horas de ensaio</li><li>30 fotos editadas</li><li>Galeria online</li></ul></article>
+      <article class="pacote"><h3>Sob medida</h3><p class="preco">Sob consulta</p><ul><li>Para festas de aniversário e ensaios especiais</li><li>Conversamos pelo WhatsApp</li></ul></article>
+    </div>
+  </section>
+
+  <section class="contato" id="contato">
+    <h2>Vamos marcar o seu ensaio?</h2>
+    <p>Chame no WhatsApp contando o tipo de ensaio (newborn, gestante, família ou aniversário infantil) e a data que você tem em mente. Respondo o quanto antes.</p>
+    <a class="btn" href="https://whats.link/clicksdafrann" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+  </section>
+</main>
+
+<footer class="rodape">
+  <span>© <span id="ano"></span> Clicks da Fran · São Paulo, SP</span>
+  <a href="https://instagram.com/clicksdafran" target="_blank" rel="noopener">Instagram</a>
+</footer>
+
+<script>
+  document.getElementById('ano').textContent = new Date().getFullYear();
+  const botoes = document.querySelectorAll('.filtros button');
+  const fotos = document.querySelectorAll('.galeria .foto');
+  botoes.forEach(b => b.addEventListener('click', () => {
+    botoes.forEach(x => x.setAttribute('aria-pressed', x === b));
+    fotos.forEach(f => f.hidden = b.dataset.filtro !== 'todos' && f.dataset.tipo !== b.dataset.filtro);
+  }));
+</script>
+
+<!--
+README rápido
+1. Fotos: crie a pasta fotos/ e, dentro de cada <div class="foto">, coloque:
+   <img src="fotos/nome.jpg" alt="descrição da foto" width="800" height="1066" loading="lazy">
+   Use WebP/JPG com no máximo ~200 KB por foto. Mantenha a classe v (vertical), h (horizontal) ou q (quadrada).
+2. WhatsApp: os botões usam https://whats.link/clicksdafrann (o mesmo link da bio do Instagram). Confira se está correto.
+3. Textos e valores: edite as seções Sobre, Depoimentos e Pacotes (ou apague Pacotes e o link do menu).
+4. Publicar: suba a pasta no Cloudflare Pages, Netlify ou GitHub Pages e depois aponte o domínio.
+-->
+</body>
+</html>
