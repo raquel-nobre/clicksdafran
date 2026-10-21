@@ -1,7 +1,7 @@
 /* Ajustes simples de navegação e links. Edite CONFIG abaixo antes de publicar. */
 const CONFIG = {
   // Informe o WhatsApp com código do país e DDD, somente números. Ex.: 5561999999999
-  whatsappNumber: "whats.link/clicksdafrann",
+  whatsappNumber: "556192888287",
   // Informe o @ do Instagram sem o símbolo @.
   instagramUsername: "clicksdafran",
   // ID do Google Tag Manager. Deixe vazio para desativar.
