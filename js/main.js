@@ -3,8 +3,23 @@ const CONFIG = {
   // Informe o WhatsApp com código do país e DDD, somente números. Ex.: 5561999999999
   whatsappNumber: "",
   // Informe o @ do Instagram sem o símbolo @.
-  instagramUsername: "clicksdafran"
+  instagramUsername: "clicksdafran",
+  // ID de métricas do Google Analytics 4. Deixe vazio para desativar.
+  gaId: "G-B4TYN602TP"
 };
+
+/* Google Analytics 4: carrega em todas as páginas que incluem este arquivo. */
+if (CONFIG.gaId) {
+  const gaScript = document.createElement("script");
+  gaScript.async = true;
+  gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${CONFIG.gaId}`;
+  document.head.appendChild(gaScript);
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { window.dataLayer.push(arguments); };
+  window.gtag("js", new Date());
+  window.gtag("config", CONFIG.gaId);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const menuButton = document.querySelector(".menu-toggle");
