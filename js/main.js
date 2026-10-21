@@ -1,24 +1,21 @@
 /* Ajustes simples de navegação e links. Edite CONFIG abaixo antes de publicar. */
 const CONFIG = {
   // Informe o WhatsApp com código do país e DDD, somente números. Ex.: 5561999999999
-  whatsappNumber: "",
+  whatsappNumber: "whats.link/clicksdafrann",
   // Informe o @ do Instagram sem o símbolo @.
   instagramUsername: "clicksdafran",
-  // ID de métricas do Google Analytics 4. Deixe vazio para desativar.
-  gaId: "G-B4TYN602TP"
+  // ID do Google Tag Manager. Deixe vazio para desativar.
+  gtmId: "GTM-P3ML6PM3"
 };
 
-/* Google Analytics 4: carrega em todas as páginas que incluem este arquivo. */
-if (CONFIG.gaId) {
-  const gaScript = document.createElement("script");
-  gaScript.async = true;
-  gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${CONFIG.gaId}`;
-  document.head.appendChild(gaScript);
-
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function () { window.dataLayer.push(arguments); };
-  window.gtag("js", new Date());
-  window.gtag("config", CONFIG.gaId);
+/* Google Tag Manager: carrega em todas as páginas que incluem este arquivo. */
+window.dataLayer = window.dataLayer || [];
+if (CONFIG.gtmId) {
+  window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+  const gtmScript = document.createElement("script");
+  gtmScript.async = true;
+  gtmScript.src = `https://www.googletagmanager.com/gtm.js?id=${CONFIG.gtmId}`;
+  document.head.appendChild(gtmScript);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -54,6 +51,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (year) year.textContent = new Date().getFullYear();
 
   document.querySelectorAll("[data-whatsapp]").forEach((link) => {
+    // Avisa o GTM a cada clique no WhatsApp (usado como conversão).
+    link.addEventListener("click", () => {
+      window.dataLayer.push({ event: "whatsapp_click", pagina: location.pathname });
+    });
+
     if (CONFIG.whatsappNumber.trim()) {
       const message = encodeURIComponent(link.dataset.msg || "Olá, Fran! Vim pelo site e gostaria de saber mais sobre os ensaios.");
       link.href = `https://wa.me/${CONFIG.whatsappNumber.trim()}?text=${message}`;
