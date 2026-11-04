@@ -68,11 +68,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  document.querySelectorAll("[data-instagram]").forEach((link) => {
+    document.querySelectorAll("[data-instagram]").forEach((link) => {
     const username = CONFIG.instagramUsername.trim().replace(/^@/, "");
     if (username) link.href = `https://instagram.com/${username}`;
+
+    // Avisa o GTM a cada clique no Instagram.
+    link.addEventListener("click", () => {
+      window.dataLayer.push({ event: "instagram_click", pagina: location.pathname });
+    });
   });
-});
 
 /* Galeria: foto que não carregou fica só como bloco colorido; clique amplia. */
 document.addEventListener("error", (e) => {
