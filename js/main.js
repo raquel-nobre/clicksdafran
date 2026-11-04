@@ -1,7 +1,9 @@
 /* Ajustes simples de navegação e links. Edite CONFIG abaixo antes de publicar. */
 const CONFIG = {
-  // Informe o WhatsApp com código do país e DDD, somente números. Ex.: 5561999999999
+  // Opção 1 (recomendada): número com código do país e DDD, só números. Ex.: 5561999999999
   whatsappNumber: "556192888287",
+  // Opção 2: link curto usado enquanto o número estiver vazio.
+  whatsappLink: "https://whats.link/clicksdafrann",
   // Informe o @ do Instagram sem o símbolo @.
   instagramUsername: "clicksdafran",
   // ID do Google Tag Manager. Deixe vazio para desativar.
@@ -56,19 +58,24 @@ document.addEventListener("DOMContentLoaded", () => {
       window.dataLayer.push({ event: "whatsapp_click", pagina: location.pathname });
     });
 
-    if (CONFIG.whatsappNumber.trim()) {
+    const number = CONFIG.whatsappNumber.trim();
+    const shortLink = CONFIG.whatsappLink.trim();
+
+    if (number) {
       const message = encodeURIComponent(link.dataset.msg || "Olá, Fran! Vim pelo site e gostaria de saber mais sobre os ensaios.");
-      link.href = `https://wa.me/${CONFIG.whatsappNumber.trim()}?text=${message}`;
+      link.href = `https://wa.me/${number}?text=${message}`;
+    } else if (shortLink) {
+      link.href = shortLink;
     } else {
       link.href = "https://wa.me/";
       link.addEventListener("click", (event) => {
         event.preventDefault();
-        alert("Configure seu número de WhatsApp em js/main.js antes de publicar o site.");
+        alert("Configure seu WhatsApp em js/main.js antes de publicar o site.");
       });
     }
   });
 
-    document.querySelectorAll("[data-instagram]").forEach((link) => {
+  document.querySelectorAll("[data-instagram]").forEach((link) => {
     const username = CONFIG.instagramUsername.trim().replace(/^@/, "");
     if (username) link.href = `https://instagram.com/${username}`;
 
@@ -77,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
       window.dataLayer.push({ event: "instagram_click", pagina: location.pathname });
     });
   });
+});
 
 /* Galeria: foto que não carregou fica só como bloco colorido; clique amplia. */
 document.addEventListener("error", (e) => {
